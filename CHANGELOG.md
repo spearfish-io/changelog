@@ -3,6 +3,10 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-10-20
+- Fixed completed contacts from the NICE CXone integration not being processed.
+- Strengthened security of account sign-in and platform services.
+
 ## 2026-10-19
 - Added Workflows: build automation workflows in a visual designer, save drafts, check and publish versions, revert to earlier versions, and start runs with their own inputs.
 - Added a run viewer for workflows, with each run's step-by-step history and progress for repeating steps.
