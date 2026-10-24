@@ -3,6 +3,10 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-10-23
+- Fixed requests sometimes being refused as too frequent when several users signed in from the same network.
+- Strengthened security of platform services.
+
 ## 2026-10-20
 - Fixed completed contacts from the NICE CXone integration not being processed.
 - Strengthened security of account sign-in and platform services.
