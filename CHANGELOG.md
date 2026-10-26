@@ -3,6 +3,9 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-10-25
+- Maintenance and reliability improvements.
+
 ## 2026-10-24
 - Maintenance and reliability improvements.
 
