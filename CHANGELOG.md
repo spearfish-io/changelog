@@ -3,6 +3,16 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-10-30
+- Strengthened auditing of account sign-in and sign-out.
+- Strengthened protection of customer data processed by AI services.
+- Web app: Added Open and Preview actions to the dashboard views list, so draft and disabled views can be checked before they go live.
+- Web app: Fixed options in dashboard filter drop-downs being cut off so that similar names could not be told apart.
+- Web app: Fixed tables picked from the data catalog in the SQL query editor being rejected on save.
+- Web app: Improved admin screens to hide options that account admins cannot use, instead of showing an error when they are opened.
+- Web app: Fixed copilot tour steps closing on their own before Done or Next could be pressed.
+- Web app: Strengthened browser security protections.
+
 ## 2026-10-25
 - Maintenance and reliability improvements.
 
