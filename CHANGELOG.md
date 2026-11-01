@@ -3,6 +3,9 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-10-31
+- Fixed workflow runs failing when an interrupted step could not be restarted straight away; the step is now retried with its remaining attempts first.
+
 ## 2026-10-30
 - Strengthened auditing of account sign-in and sign-out.
 - Strengthened protection of customer data processed by AI services.
