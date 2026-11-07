@@ -3,6 +3,26 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-06
+- Fixed very large numeric identifiers losing precision when passed between workflow steps.
+- Strengthened data isolation between accounts in workflow runs.
+
+## 2026-11-05
+- Fixed calls whose recording or transcript arrived after the call itself not showing that transcript or audio.
+- Fixed HubSpot calls sometimes reaching transcripts, signals and reports a day late.
+- Improved nightly data processing so it fully catches up in one run after a delayed or missed night.
+- Fixed dashboard queries that cannot run showing a generic error; they now explain why the query was refused.
+- Fixed some automated quality evaluations failing to complete.
+- Improved workflow run reports so steps that had nothing new to process are no longer flagged as warnings.
+- Strengthened auditing of changes to workflows, including who made each change.
+- Strengthened access controls for workflows.
+
+## 2026-11-04
+- Maintenance and reliability improvements.
+
+## 2026-10-31
+- Fixed workflow runs failing when an interrupted step could not be restarted straight away; the step is now retried with its remaining attempts first.
+
 ## 2026-10-30
 - Strengthened auditing of account sign-in and sign-out.
 - Strengthened protection of customer data processed by AI services.
