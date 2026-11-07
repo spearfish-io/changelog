@@ -3,6 +3,10 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-06
+- Fixed very large numeric identifiers losing precision when passed between workflow steps.
+- Strengthened data isolation between accounts in workflow runs.
+
 ## 2026-11-05
 - Fixed calls whose recording or transcript arrived after the call itself not showing that transcript or audio.
 - Fixed HubSpot calls sometimes reaching transcripts, signals and reports a day late.
