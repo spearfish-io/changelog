@@ -3,6 +3,9 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-07
+- Maintenance and reliability improvements.
+
 ## 2026-11-06
 - Fixed very large numeric identifiers losing precision when passed between workflow steps.
 - Strengthened data isolation between accounts in workflow runs.
