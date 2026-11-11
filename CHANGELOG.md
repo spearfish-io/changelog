@@ -3,6 +3,11 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-10
+- Fixed customer lifecycle tracking keeping entries for contacts that had since been excluded, which could inflate funnel counts.
+- Strengthened auditing of changes to user roles, permissions and account membership.
+- Strengthened protection of platform credentials.
+
 ## 2026-11-07
 - Maintenance and reliability improvements.
 
