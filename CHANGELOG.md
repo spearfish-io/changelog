@@ -3,6 +3,27 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-12
+- Added workflow help to the copilot: it can look up workflows and runs and prepare changes to them, which are made only after you confirm them.
+- Changed copilot conversations so that only the user who had them and administrators can read them.
+- Added backfills of a past date range to workflows built from blocks, optionally for only some of their blocks; a running backfill no longer causes the scheduled run to be skipped.
+- Added a run summary to workflows, recorded when a run reaches its end.
+- Added an option to keep HubSpot contacts up to date when they are edited after they were created.
+- Improved workflow validation so problems with a stored decision policy are shown on the step and field they belong to.
+- Improved workflow validation speed for very large workflow definitions.
+- Strengthened auditing of account changes made through API clients.
+- Web app: Added a Decision policies section for creating, versioning and activating stored decision policies, and the option to use a stored policy in a workflow step.
+- Web app: Added a Blocks view for workflows built from blocks, where they can be viewed and edited block by block.
+- Web app: Added a run view grouped by block, and options in the Run dialog to run only some blocks or backfill a past date range.
+- Web app: Added a confirmation card for workflow changes the copilot prepares, and the copilot can now point to steps on workflow and run diagrams.
+- Web app: Added a Finish step to the workflow designer for editing a workflow's run summary; the Halt step is no longer offered.
+- Web app: Added searchable pickers in the workflow designer for inputs that refer to forms, signals, connections or other workflows.
+- Web app: Added an editor for signal path maps in the workflow designer.
+- Web app: Added the Completed with failures run status and skipped steps to workflow run views.
+- Web app: Improved the workflow designer to hide inputs that are filled in automatically unless a step sets them.
+- Web app: Fixed the cursor being lost when a workflow designer field switched editors while typing.
+- Web app: Strengthened protection of web app pages.
+
 ## 2026-11-10
 - Fixed customer lifecycle tracking keeping entries for contacts that had since been excluded, which could inflate funnel counts.
 - Strengthened auditing of changes to user roles, permissions and account membership.
