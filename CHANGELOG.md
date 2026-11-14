@@ -3,6 +3,69 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-13
+- Added transcript search to the copilot: it can find conversations by what was said over a date range, count matches by day, agent, queue and more, read whole calls, and link to the moment something was said.
+- Improved the copilot's handling of failed actions, so it learns why an action failed and can correct its next attempt.
+- Fixed the copilot sometimes saying it could not start workflow runs.
+- Changed workflow publishing to refuse workflows that contain a Halt step; use the run summary instead. Workflows already published with a Halt step keep running.
+- Fixed filters on transcript, quality and insights data that are meant to ignore letter case matching only the exact case.
+- Web app: Added chart variants and editor controls to dashboards, including a second value axis, line styles and markers, stack groups, horizontal bars, goal lines and shaded bands, donut, half and two-level pies, scatter trend lines and grouped treemaps.
+- Web app: Added expandable card descriptions on dashboards, and an option to show a card's description as a tooltip.
+- Web app: Added links that open a call's transcript at a specific moment, which the copilot uses in its transcript search results.
+- Web app: Added a notice in copilot replies when an action fails for a reason it cannot fix itself, with a reference to give support.
+- Web app: Fixed dashboard chart options that had no effect: legend position, series breakout, distinct colours beyond the fifth series, and PNG download.
+- Web app: Fixed sankey charts not labelling their nodes and rendering blank when a value appeared on both sides.
+- Web app: Fixed the dashboard Edit card dialog's controls sliding off-screen for cards with a long description or a wide table.
+
+## 2026-11-12
+- Added workflow help to the copilot: it can look up workflows and runs and prepare changes to them, which are made only after you confirm them.
+- Changed copilot conversations so that only the user who had them and administrators can read them.
+- Added backfills of a past date range to workflows built from blocks, optionally for only some of their blocks; a running backfill no longer causes the scheduled run to be skipped.
+- Added a run summary to workflows, recorded when a run reaches its end.
+- Added an option to keep HubSpot contacts up to date when they are edited after they were created.
+- Improved workflow validation so problems with a stored decision policy are shown on the step and field they belong to.
+- Improved workflow validation speed for very large workflow definitions.
+- Strengthened auditing of account changes made through API clients.
+- Web app: Added a Decision policies section for creating, versioning and activating stored decision policies, and the option to use a stored policy in a workflow step.
+- Web app: Added a Blocks view for workflows built from blocks, where they can be viewed and edited block by block.
+- Web app: Added a run view grouped by block, and options in the Run dialog to run only some blocks or backfill a past date range.
+- Web app: Added a confirmation card for workflow changes the copilot prepares, and the copilot can now point to steps on workflow and run diagrams.
+- Web app: Added a Finish step to the workflow designer for editing a workflow's run summary; the Halt step is no longer offered.
+- Web app: Added searchable pickers in the workflow designer for inputs that refer to forms, signals, connections or other workflows.
+- Web app: Added an editor for signal path maps in the workflow designer.
+- Web app: Added the Completed with failures run status and skipped steps to workflow run views.
+- Web app: Improved the workflow designer to hide inputs that are filled in automatically unless a step sets them.
+- Web app: Fixed the cursor being lost when a workflow designer field switched editors while typing.
+- Web app: Strengthened protection of web app pages.
+
+## 2026-11-10
+- Fixed customer lifecycle tracking keeping entries for contacts that had since been excluded, which could inflate funnel counts.
+- Strengthened auditing of changes to user roles, permissions and account membership.
+- Strengthened protection of platform credentials.
+
+## 2026-11-07
+- Maintenance and reliability improvements.
+
+## 2026-11-06
+- Fixed very large numeric identifiers losing precision when passed between workflow steps.
+- Strengthened data isolation between accounts in workflow runs.
+
+## 2026-11-05
+- Fixed calls whose recording or transcript arrived after the call itself not showing that transcript or audio.
+- Fixed HubSpot calls sometimes reaching transcripts, signals and reports a day late.
+- Improved nightly data processing so it fully catches up in one run after a delayed or missed night.
+- Fixed dashboard queries that cannot run showing a generic error; they now explain why the query was refused.
+- Fixed some automated quality evaluations failing to complete.
+- Improved workflow run reports so steps that had nothing new to process are no longer flagged as warnings.
+- Strengthened auditing of changes to workflows, including who made each change.
+- Strengthened access controls for workflows.
+
+## 2026-11-04
+- Maintenance and reliability improvements.
+
+## 2026-10-31
+- Fixed workflow runs failing when an interrupted step could not be restarted straight away; the step is now retried with its remaining attempts first.
+
 ## 2026-10-30
 - Strengthened auditing of account sign-in and sign-out.
 - Strengthened protection of customer data processed by AI services.
