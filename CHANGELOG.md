@@ -3,6 +3,9 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-14
+- Completed the removal of the Halt workflow step: a workflow that still contains one can no longer be started, and past runs that ended at a Halt keep their status.
+
 ## 2026-11-13
 - Added transcript search to the copilot: it can find conversations by what was said over a date range, count matches by day, agent, queue and more, read whole calls, and link to the moment something was said.
 - Improved the copilot's handling of failed actions, so it learns why an action failed and can correct its next attempt.
