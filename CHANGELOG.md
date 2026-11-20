@@ -3,6 +3,10 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-19
+- Improved the data catalog so tables list their columns, types and units with platform descriptions, and limited a tenant's own edits to table and column names and descriptions.
+- Strengthened auditing of sign-ins with Google and Microsoft accounts.
+
 ## 2026-11-18
 - Added checks of the values and references given to each workflow step; a missing required input, a value of the wrong type or an option the step does not offer now prevents publishing.
 - Fixed workflow runs that resumed after a pause sometimes finishing without running their remaining steps, and several smaller issues with how steps read their inputs.
