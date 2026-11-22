@@ -3,6 +3,23 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-21
+- Added one-time runs of chosen steps of a workflow or of a past time window, each with a required reason that is recorded with the run, through the API and the copilot.
+- Changed the copilot's ruleset tools to work with the new rulesets, so its proposed changes show each edit, the checks and the test results before you confirm them.
+- Fixed NICE CXone recording and administration syncs sometimes failing when several ran at the same time.
+- Fixed a VisionLink sync step failing, which held back integration health reporting.
+- Strengthened permission checks for rerunning a workflow from a later step.
+- Strengthened protection of the audit log against changes.
+- Strengthened auditing of changes to sign-in tokens and API keys.
+- Strengthened protection of record data in ruleset reports.
+- Web app: Replaced the ruleset editor with a simpler one, where rules are edited in place as a table of conditions and results, with tests and versions, and each new ruleset chooses what kind of result it produces.
+- Web app: Added a required Reason to the Run dialog when running chosen blocks or a past window, shown on the run's page.
+- Web app: Fixed steps a backfill run leaves out showing as failed on the run canvas and Timeline; they now show as left out, with the reason.
+- Web app: Added a US counties map to dashboards, so a state map can drill through to its counties.
+- Web app: Fixed map tooltips and click targets sitting away from the drawn regions in some browsers.
+- Web app: Changed the dashboard chart editor to a large dialog with tabbed settings, previewing the chart at its size on the dashboard.
+- Web app: Removed the separate Analytics page; dashboards that still show its charts keep them until they move to built-in dashboards.
+
 ## 2026-11-19
 - Improved the data catalog so tables list their columns, types and units with platform descriptions, and limited a tenant's own edits to table and column names and descriptions.
 - Strengthened auditing of sign-ins with Google and Microsoft accounts.
