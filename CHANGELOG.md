@@ -3,6 +3,21 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-22
+- Added campaigns: a past time window can be run as a series of shorter slices, one after another, through the API and the copilot.
+- Added reference sets whose entries come from an uploaded CSV or Excel file or from a connected spreadsheet, with a version history and rows that cannot be read reported by sheet row.
+- Added export bindings, which write the results of a saved query into mapped columns of an Excel worksheet, matched by a key column. ([details](details/2026-11-22-export-bindings.md))
+- Added a Decision review item to the inbox for decisions the platform flags for a person to confirm or correct.
+- Improved the HubSpot integration so contact lifecycle stages can be built from the change history of a single property.
+- Fixed some copilot requests to create QA forms failing with an internal error instead of saying what to correct.
+- Web app: Added Reference sets and Export bindings pages under Settings, where administrators can edit, upload, review versions of and manage them.
+- Web app: Added Subscriptions and Alerts icons to a dashboard's header, to manage its subscriptions and its alerts without the admin pages.
+- Web app: Added a "…" menu to a dashboard with Details, History (with Revert), Duplicate and Delete.
+- Web app: Added Views and Queries tabs to a dashboard workspace's home page for people who manage dashboards, listing every view, drafts and deleted views included, with a New view action and the workspace settings.
+- Web app: Added a View layout panel to dashboard edit mode for the view's width, auto-refresh and opening page, and moved the view's render mode to its Details, so a static view can be switched back.
+- Web app: Added a Filters panel to dashboard edit mode to add, edit, reorder and remove the view's filters, previewed live before you save.
+- Web app: Added page management to the page tabs in dashboard edit mode: rename, hide or show, reorder by dragging, and delete; a new page is now part of your unsaved changes.
+
 ## 2026-11-21
 - Added one-time runs of chosen steps of a workflow or of a past time window, each with a required reason that is recorded with the run, through the API and the copilot.
 - Changed the copilot's ruleset tools to work with the new rulesets, so its proposed changes show each edit, the checks and the test results before you confirm them.
