@@ -3,6 +3,23 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-23
+- Added conditions on signal values to QA steps, so a step evaluates only the interactions whose latest values match, for example only enrollment calls; a malformed condition is now refused when the workflow is published.
+- Improved export bindings so worksheet lines can be matched by a reference set's mapping across several columns; lines whose match is missing or ambiguous are skipped and counted, never guessed.
+- Added "some" and "every" expressions to decision documents, and fixed several edge cases in how their expressions compare lists and read dates and large numbers.
+- Fixed decision documents that match or attribute records failing when run from a workflow step.
+- Web app: Added History previews to dashboards: pick a past version to see it on the dashboard, then go back or restore it, keeping the current version in History.
+- Web app: Added one card editor for a dashboard card's query and its chart, with a Query tab to edit and run the SQL, New query from Add card, and Save as a new query when other views use the same query.
+- Web app: Added Create alert to a dashboard card's menu and Set as default to a view's menu.
+- Web app: Added Undo for 10 seconds after removing a card or deleting a page in dashboard edit mode.
+- Web app: Changed dashboard edit mode to move cards by dragging and resize them from their edges or with the arrow keys, with other cards making way.
+- Web app: Changed dashboard card heights to finer steps; existing dashboards keep their exact layout.
+- Web app: Changed dashboard charts, numbers, gauges, funnels and tables to fit their card's size, shortening or hiding what does not fit with the full text on hover, and set a minimum size for each chart type; Legend, Label angle and Data labels now offer Auto, and charts whose label angle was saved as Level now use Auto.
+- Web app: Changed dashboard charts to leave out zero values by default, with a Show zero values switch in the card editor.
+- Web app: Fixed number values, card titles, axis titles, pie labels and bar value labels overlapping or running outside their card.
+- Web app: Removed the separate dashboards admin area; views, queries, workspace settings and default dashboards are managed on the dashboards themselves, and New workspace and Import workspace are in a + menu.
+- Web app: Fixed creating a new dashboard workspace failing; new workspaces always use the built-in query engine.
+
 ## 2026-11-22
 - Added campaigns: a past time window can be run as a series of shorter slices, one after another, through the API and the copilot.
 - Added reference sets whose entries come from an uploaded CSV or Excel file or from a connected spreadsheet, with a version history and rows that cannot be read reported by sheet row.
