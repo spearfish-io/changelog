@@ -3,6 +3,46 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-25
+- Added dashboard chart authoring to the Claude connector: it can create and edit a query's charts and named visualizations, refusing a chart that does not fit before saving, and set a new workspace's currency and date defaults.
+- Added ruleset tools to the Claude connector to list the workflows that use a ruleset and to publish a version that moves them onto it.
+- Improved Decision review items in the inbox to explain each decision from its data: the ruleset, the rule that decided it, why it was flagged for review and the evidence behind it, including the transcript passages a signal cited.
+- Changed a decision's review reason to be optional and, where a ruleset declares it, limited to your own list of review reasons.
+- Added the source system's activity type to interactions, filled for HubSpot calls, and the customer's owner and an optional acquired date to HubSpot customer data.
+- Changed dashboard queries so they can read the latest version of each row of a table they already have access to.
+- Changed the HubSpot integration to build customers only from contacts its contact filter keeps, and improved nightly processing for accounts with many contacts.
+- Improved the CallRail integration to collect every available call field (plan-gated ones optionally), re-read recent calls so later changes such as tags, value and lead status are picked up, and optionally collect leads and text thread details.
+- Fixed the CallRail integration collecting records from other companies on the same CallRail account when a company was configured.
+- Fixed CallRail text conversations missing messages beyond the most recent ones, and HubSpot conversations missing messages that arrived later.
+- Fixed CallRail records excluded by a record filter still appearing as empty interactions or in transcripts.
+- Fixed dashboards and decisions sometimes showing a conversation's original customer or agent after it had been matched to another.
+- Improved the speed of dashboard tiles and decisions that read signal values.
+- Fixed copilot requests failing when the assistant spent more than a minute thinking before replying.
+- Fixed the Claude connector describing tenant administrators as read-only for some features.
+- Fixed dashboard queries being refused when a quoted column name contained certain words, and filters failing on columns whose names contain spaces.
+- Fixed the card editor failing to read a query's columns when the query uses optional filter clauses.
+- Fixed SQL signals that read other signals' values missing the values written in the same run.
+- Web app: Added per-field value formats to dashboards (number, currency, accounting, percentage, scientific, short, duration, date, time, text, link or an Excel format code), set in the card editor's new Fields section and applied wherever the field shows.
+- Web app: Added workspace formatting defaults for currency and date style under Workspace settings → General, used wherever a field's own format leaves them unset.
+- Web app: Fixed dates in pivot headers and in pie, treemap and funnel labels not following field and workspace formats.
+- Web app: Added targets to dashboards: goal lines, per-row goals and ranges on line, bar, area and combo charts, and the difference from a target on number tiles, gauges and tables; existing goal lines and bands on the value axis are now listed as targets.
+- Web app: Added conditional formatting rules to dashboards, styling table cells or rows, pivot cells, bars, slices, points, number tiles and gauges by their values, another column or a target; badge columns, sign colours and gauge thresholds are now rules, with badges shown as tinted cells and a gauge's reading taking the colour of its band.
+- Web app: Added named visualizations: a query can keep several charts, and the card editor can create, rename, delete and pick one for each card.
+- Web app: Changed dashboard filter choices to stay in the page address, so they survive a reload, a shared link and Back after a click-through.
+- Web app: Improved dashboard click-throughs to carry your filters and earlier click choices to the page you open, even in another dashboard, set a date filter to a clicked period such as a month, pass several columns of a clicked table row, and link a page to itself; the banner names what you clicked as the card did.
+- Web app: Changed dashboard date filters to one control offering All time, rolling windows, whole periods and a custom range, let authors choose which ranges a filter offers, and fixed Reset so it restores every filter.
+- Web app: Changed each dashboard page to show only the filters its charts use, on one line with a More filters menu.
+- Web app: Added grouped page tabs to dashboards, set up in the View layout panel.
+- Web app: Added up to five extra columns to bar, line, area and combo chart tooltips.
+- Web app: Changed web addresses in dashboard tables to open as links, optionally with short link text, and a link cell now opens its own link inside a clickable row.
+- Web app: Added sorting and paging to dashboard table cards, a saved default sort for tables, and sorting pivot rows by label or by a measure's total.
+- Web app: Fixed moving a card in dashboard edit mode: it again moves by dragging anywhere on it, or by its grip on a touch screen.
+- Web app: Changed rulesets to show in plain language: each ruleset by its title, its steps with their descriptions and each rule as a sentence, with the logic one click away.
+- Web app: Changed rulesets to Edit, Save draft and Publish as QA forms do, with a Used by line listing the workflows that use a ruleset and a Publish that can move them onto the new version; the copilot shows which workflows a publish would move before you confirm.
+- Web app: Added a Subject section to inbox items about a transcript or a QA evaluation, with the record's basics, the customer's phone and email and a link to it; Evidence now shows only the transcript turns or QA answer the item cites.
+- Web app: Improved Decision review items in the inbox to show where each evidence value comes from, fold technical context away and link to the original record.
+- Web app: Fixed the inbox item dialog breaking on evidence with long labels.
+
 ## 2026-11-23
 - Added conditions on signal values to QA steps, so a step evaluates only the interactions whose latest values match, for example only enrollment calls; a malformed condition is now refused when the workflow is published.
 - Improved export bindings so worksheet lines can be matched by a reference set's mapping across several columns; lines whose match is missing or ambiguous are skipped and counted, never guessed.
