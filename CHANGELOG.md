@@ -3,6 +3,16 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-26
+- Added a customer's lifetime value, managed assets and currency, and the reason behind their account status (set from a HubSpot property you choose), to the customer data dashboards can read.
+- Added marketing acquisition details to interactions: source, medium, landing page and campaign for CallRail calls and texts and HubSpot form submissions, with the interaction's subject and its from and to parties also available to dashboards.
+- Added lifecycle stage events, linked to the same customers as customer data, to the data dashboards can read.
+- Improved data deletion so records removed by a deletion request are fully removed from storage.
+- Improved the speed of decision runs, which now rewrite only the decisions that changed.
+- Strengthened protection of signed-in identity information as requests pass through the platform.
+- Web app: Changed the dashboard editor's side panels to group settings into folding sections, with help text behind an info icon that opens on hover or keyboard focus and stays open on a click or tap.
+- Web app: Improved the inbox item dialog to keep the decision and your response in view, with Subject, Evidence and Details in collapsible sections, each evidence value explained in a tooltip and dates shown in your time zone.
+
 ## 2026-11-25
 - Added dashboard chart authoring to the Claude connector: it can create and edit a query's charts and named visualizations, refusing a chart that does not fit before saving, and set a new workspace's currency and date defaults.
 - Added ruleset tools to the Claude connector to list the workflows that use a ruleset and to publish a version that moves them onto it.
