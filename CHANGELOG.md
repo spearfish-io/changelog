@@ -3,6 +3,9 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-27
+- Maintenance and reliability improvements.
+
 ## 2026-11-26
 - Added a customer's lifetime value, managed assets and currency, and the reason behind their account status (set from a HubSpot property you choose), to the customer data dashboards can read.
 - Added marketing acquisition details to interactions: source, medium, landing page and campaign for CallRail calls and texts and HubSpot form submissions, with the interaction's subject and its from and to parties also available to dashboards.
