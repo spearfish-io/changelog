@@ -3,6 +3,214 @@
 Release notes for the Spearfish platform. Entries are summarized at the product level;
 internal details are omitted.
 
+## 2026-11-27
+- Maintenance and reliability improvements.
+
+## 2026-11-26
+- Added a customer's lifetime value, managed assets and currency, and the reason behind their account status (set from a HubSpot property you choose), to the customer data dashboards can read.
+- Added marketing acquisition details to interactions: source, medium, landing page and campaign for CallRail calls and texts and HubSpot form submissions, with the interaction's subject and its from and to parties also available to dashboards.
+- Added lifecycle stage events, linked to the same customers as customer data, to the data dashboards can read.
+- Improved data deletion so records removed by a deletion request are fully removed from storage.
+- Improved the speed of decision runs, which now rewrite only the decisions that changed.
+- Strengthened protection of signed-in identity information as requests pass through the platform.
+- Web app: Changed the dashboard editor's side panels to group settings into folding sections, with help text behind an info icon that opens on hover or keyboard focus and stays open on a click or tap.
+- Web app: Improved the inbox item dialog to keep the decision and your response in view, with Subject, Evidence and Details in collapsible sections, each evidence value explained in a tooltip and dates shown in your time zone.
+
+## 2026-11-25
+- Added dashboard chart authoring to the Claude connector: it can create and edit a query's charts and named visualizations, refusing a chart that does not fit before saving, and set a new workspace's currency and date defaults.
+- Added ruleset tools to the Claude connector to list the workflows that use a ruleset and to publish a version that moves them onto it.
+- Improved Decision review items in the inbox to explain each decision from its data: the ruleset, the rule that decided it, why it was flagged for review and the evidence behind it, including the transcript passages a signal cited.
+- Changed a decision's review reason to be optional and, where a ruleset declares it, limited to your own list of review reasons.
+- Added the source system's activity type to interactions, filled for HubSpot calls, and the customer's owner and an optional acquired date to HubSpot customer data.
+- Changed dashboard queries so they can read the latest version of each row of a table they already have access to.
+- Changed the HubSpot integration to build customers only from contacts its contact filter keeps, and improved nightly processing for accounts with many contacts.
+- Improved the CallRail integration to collect every available call field (plan-gated ones optionally), re-read recent calls so later changes such as tags, value and lead status are picked up, and optionally collect leads and text thread details.
+- Fixed the CallRail integration collecting records from other companies on the same CallRail account when a company was configured.
+- Fixed CallRail text conversations missing messages beyond the most recent ones, and HubSpot conversations missing messages that arrived later.
+- Fixed CallRail records excluded by a record filter still appearing as empty interactions or in transcripts.
+- Fixed dashboards and decisions sometimes showing a conversation's original customer or agent after it had been matched to another.
+- Improved the speed of dashboard tiles and decisions that read signal values.
+- Fixed copilot requests failing when the assistant spent more than a minute thinking before replying.
+- Fixed the Claude connector describing tenant administrators as read-only for some features.
+- Fixed dashboard queries being refused when a quoted column name contained certain words, and filters failing on columns whose names contain spaces.
+- Fixed the card editor failing to read a query's columns when the query uses optional filter clauses.
+- Fixed SQL signals that read other signals' values missing the values written in the same run.
+- Web app: Added per-field value formats to dashboards (number, currency, accounting, percentage, scientific, short, duration, date, time, text, link or an Excel format code), set in the card editor's new Fields section and applied wherever the field shows.
+- Web app: Added workspace formatting defaults for currency and date style under Workspace settings → General, used wherever a field's own format leaves them unset.
+- Web app: Fixed dates in pivot headers and in pie, treemap and funnel labels not following field and workspace formats.
+- Web app: Added targets to dashboards: goal lines, per-row goals and ranges on line, bar, area and combo charts, and the difference from a target on number tiles, gauges and tables; existing goal lines and bands on the value axis are now listed as targets.
+- Web app: Added conditional formatting rules to dashboards, styling table cells or rows, pivot cells, bars, slices, points, number tiles and gauges by their values, another column or a target; badge columns, sign colours and gauge thresholds are now rules, with badges shown as tinted cells and a gauge's reading taking the colour of its band.
+- Web app: Added named visualizations: a query can keep several charts, and the card editor can create, rename, delete and pick one for each card.
+- Web app: Changed dashboard filter choices to stay in the page address, so they survive a reload, a shared link and Back after a click-through.
+- Web app: Improved dashboard click-throughs to carry your filters and earlier click choices to the page you open, even in another dashboard, set a date filter to a clicked period such as a month, pass several columns of a clicked table row, and link a page to itself; the banner names what you clicked as the card did.
+- Web app: Changed dashboard date filters to one control offering All time, rolling windows, whole periods and a custom range, let authors choose which ranges a filter offers, and fixed Reset so it restores every filter.
+- Web app: Changed each dashboard page to show only the filters its charts use, on one line with a More filters menu.
+- Web app: Added grouped page tabs to dashboards, set up in the View layout panel.
+- Web app: Added up to five extra columns to bar, line, area and combo chart tooltips.
+- Web app: Changed web addresses in dashboard tables to open as links, optionally with short link text, and a link cell now opens its own link inside a clickable row.
+- Web app: Added sorting and paging to dashboard table cards, a saved default sort for tables, and sorting pivot rows by label or by a measure's total.
+- Web app: Fixed moving a card in dashboard edit mode: it again moves by dragging anywhere on it, or by its grip on a touch screen.
+- Web app: Changed rulesets to show in plain language: each ruleset by its title, its steps with their descriptions and each rule as a sentence, with the logic one click away.
+- Web app: Changed rulesets to Edit, Save draft and Publish as QA forms do, with a Used by line listing the workflows that use a ruleset and a Publish that can move them onto the new version; the copilot shows which workflows a publish would move before you confirm.
+- Web app: Added a Subject section to inbox items about a transcript or a QA evaluation, with the record's basics, the customer's phone and email and a link to it; Evidence now shows only the transcript turns or QA answer the item cites.
+- Web app: Improved Decision review items in the inbox to show where each evidence value comes from, fold technical context away and link to the original record.
+- Web app: Fixed the inbox item dialog breaking on evidence with long labels.
+
+## 2026-11-23
+- Added conditions on signal values to QA steps, so a step evaluates only the interactions whose latest values match, for example only enrollment calls; a malformed condition is now refused when the workflow is published.
+- Improved export bindings so worksheet lines can be matched by a reference set's mapping across several columns; lines whose match is missing or ambiguous are skipped and counted, never guessed.
+- Added "some" and "every" expressions to decision documents, and fixed several edge cases in how their expressions compare lists and read dates and large numbers.
+- Fixed decision documents that match or attribute records failing when run from a workflow step.
+- Web app: Added History previews to dashboards: pick a past version to see it on the dashboard, then go back or restore it, keeping the current version in History.
+- Web app: Added one card editor for a dashboard card's query and its chart, with a Query tab to edit and run the SQL, New query from Add card, and Save as a new query when other views use the same query.
+- Web app: Added Create alert to a dashboard card's menu and Set as default to a view's menu.
+- Web app: Added Undo for 10 seconds after removing a card or deleting a page in dashboard edit mode.
+- Web app: Changed dashboard edit mode to move cards by dragging and resize them from their edges or with the arrow keys, with other cards making way.
+- Web app: Changed dashboard card heights to finer steps; existing dashboards keep their exact layout.
+- Web app: Changed dashboard charts, numbers, gauges, funnels and tables to fit their card's size, shortening or hiding what does not fit with the full text on hover, and set a minimum size for each chart type; Legend, Label angle and Data labels now offer Auto, and charts whose label angle was saved as Level now use Auto.
+- Web app: Changed dashboard charts to leave out zero values by default, with a Show zero values switch in the card editor.
+- Web app: Fixed number values, card titles, axis titles, pie labels and bar value labels overlapping or running outside their card.
+- Web app: Removed the separate dashboards admin area; views, queries, workspace settings and default dashboards are managed on the dashboards themselves, and New workspace and Import workspace are in a + menu.
+- Web app: Fixed creating a new dashboard workspace failing; new workspaces always use the built-in query engine.
+
+## 2026-11-22
+- Added campaigns: a past time window can be run as a series of shorter slices, one after another, through the API and the copilot.
+- Added reference sets whose entries come from an uploaded CSV or Excel file or from a connected spreadsheet, with a version history and rows that cannot be read reported by sheet row.
+- Added export bindings, which write the results of a saved query into mapped columns of an Excel worksheet, matched by a key column. ([details](details/2026-11-22-export-bindings.md))
+- Added a Decision review item to the inbox for decisions the platform flags for a person to confirm or correct.
+- Improved the HubSpot integration so contact lifecycle stages can be built from the change history of a single property.
+- Fixed some copilot requests to create QA forms failing with an internal error instead of saying what to correct.
+- Web app: Added Reference sets and Export bindings pages under Settings, where administrators can edit, upload, review versions of and manage them.
+- Web app: Added Subscriptions and Alerts icons to a dashboard's header, to manage its subscriptions and its alerts without the admin pages.
+- Web app: Added a "…" menu to a dashboard with Details, History (with Revert), Duplicate and Delete.
+- Web app: Added Views and Queries tabs to a dashboard workspace's home page for people who manage dashboards, listing every view, drafts and deleted views included, with a New view action and the workspace settings.
+- Web app: Added a View layout panel to dashboard edit mode for the view's width, auto-refresh and opening page, and moved the view's render mode to its Details, so a static view can be switched back.
+- Web app: Added a Filters panel to dashboard edit mode to add, edit, reorder and remove the view's filters, previewed live before you save.
+- Web app: Added page management to the page tabs in dashboard edit mode: rename, hide or show, reorder by dragging, and delete; a new page is now part of your unsaved changes.
+
+## 2026-11-21
+- Added one-time runs of chosen steps of a workflow or of a past time window, each with a required reason that is recorded with the run, through the API and the copilot.
+- Changed the copilot's ruleset tools to work with the new rulesets, so its proposed changes show each edit, the checks and the test results before you confirm them.
+- Fixed NICE CXone recording and administration syncs sometimes failing when several ran at the same time.
+- Fixed a VisionLink sync step failing, which held back integration health reporting.
+- Strengthened permission checks for rerunning a workflow from a later step.
+- Strengthened protection of the audit log against changes.
+- Strengthened auditing of changes to sign-in tokens and API keys.
+- Strengthened protection of record data in ruleset reports.
+- Web app: Replaced the ruleset editor with a simpler one, where rules are edited in place as a table of conditions and results, with tests and versions, and each new ruleset chooses what kind of result it produces.
+- Web app: Added a required Reason to the Run dialog when running chosen blocks or a past window, shown on the run's page.
+- Web app: Fixed steps a backfill run leaves out showing as failed on the run canvas and Timeline; they now show as left out, with the reason.
+- Web app: Added a US counties map to dashboards, so a state map can drill through to its counties.
+- Web app: Fixed map tooltips and click targets sitting away from the drawn regions in some browsers.
+- Web app: Changed the dashboard chart editor to a large dialog with tabbed settings, previewing the chart at its size on the dashboard.
+- Web app: Removed the separate Analytics page; dashboards that still show its charts keep them until they move to built-in dashboards.
+
+## 2026-11-19
+- Improved the data catalog so tables list their columns, types and units with platform descriptions, and limited a tenant's own edits to table and column names and descriptions.
+- Strengthened auditing of sign-ins with Google and Microsoft accounts.
+
+## 2026-11-18
+- Added checks of the values and references given to each workflow step; a missing required input, a value of the wrong type or an option the step does not offer now prevents publishing.
+- Fixed workflow runs that resumed after a pause sometimes finishing without running their remaining steps, and several smaller issues with how steps read their inputs.
+- Added a credential check for every supported connection sign-in method, run when credentials are saved or tested.
+- Added more HubSpot options to workflow blocks: edited contacts, calls, emails, meetings, deals, notes and tasks, a contact filter and lifecycle tracking, all off unless chosen.
+- Added a team filter to the QA and signals workflow blocks.
+- Added an option to leave chosen phone lines out of RingCentral recording sync.
+- Added rulesets to the copilot: it can read, check and try rulesets, and prepare changes to them, which are made only after you confirm them.
+- Added editing of workflows built from activities to the copilot, with changes made only after you confirm them.
+- Improved the Claude connector with built-in guidance and ready-made prompts for reviewing a QA form, auditing signals, building a dashboard for a question and exploring your data.
+- Fixed the copilot cutting off replies that took more than a few seconds to start.
+- Fixed copilot links to workflows not opening the right part of the workflow page.
+- Improved dashboard loading speed.
+- Strengthened workflow webhook security: webhook keys are now generated by the platform, stored securely and shown only once.
+- Strengthened protection of stored integration credentials.
+- Strengthened auditing of switches between tenants.
+- Web app: Added Workflow Studio, one page with Properties, Blocks, Activities, Code, Runs and Versions tabs to build, check and run a workflow, with a searchable step catalogue grouped by integration and help on every step setting.
+- Web app: Added lists to choose from for step settings that refer to data sources, AI models, reference datasets, QA forms, connections, agents, customers, HubSpot, CallRail and Microsoft 365 items, searched on the server when a list is long.
+- Web app: Changed the workflow Code tab to check a definition against the platform's own definition rules.
+- Web app: Added starting a new workflow from a template; it is always created as a draft to review and publish.
+- Web app: Added the triggers that start a workflow to its page, where schedules and webhooks can be added, edited, switched off and removed, and moved the Triggers page under Workflows. ([details](details/2026-11-18-workflow-webhooks.md))
+- Web app: Added Last run, Starts on, authoring, integrations, 7-day run and failure counts and step count columns to the workflows list, and a Health card on a workflow's Properties tab.
+- Web app: Renamed decision policies to Rulesets, and grouped Definitions, Triggers, Rulesets and Run History under one Workflows menu.
+- Web app: Added a ruleset editor with Facts, Rules, Results, Versions and Code tabs, where rules and conditions are edited as a form and every issue is shown where it is.
+- Web app: Added fact lists per tenant for rulesets, shown by your tenant's names for them, with an explanation when a ruleset reads a list your tenant does not have.
+- Web app: Added a summary of what a ruleset or workflow change would do to the copilot's confirmation card, with any problems listed first.
+- Web app: Fixed copilot links dropping parts of their address, such as opening a ruleset's default version instead of the one linked.
+- Web app: Added provider availability to the integrations catalog, with Enable and Disable for tenant administrators and Contact Sales for providers available on request.
+- Web app: Improved connection forms to keep their fields in the intended order.
+- Web app: Added a Map chart type to dashboards that shades US states or supported county maps by a query's values, and can draw your own regions as a region map or as outlines.
+- Web app: Changed clickable dashboard values to look like plain text until you point at them, and one-row cards to show their description as a tooltip.
+- Web app: Fixed dashboard cards where an expanded description squeezed the chart, an X-axis title overlapped the legend, or a one-row text card cut off its second line.
+- Web app: Fixed dialogs showing about twice as wide as intended.
+- Web app: Fixed manual evaluation forms with an Observational question that has no options, which could not be submitted, and Observational answers not being saved.
+- Web app: Strengthened protection of the requests the web app sends on your behalf.
+
+## 2026-11-14
+- Completed the removal of the Halt workflow step: a workflow that still contains one can no longer be started, and past runs that ended at a Halt keep their status.
+
+## 2026-11-13
+- Added transcript search to the copilot: it can find conversations by what was said over a date range, count matches by day, agent, queue and more, read whole calls, and link to the moment something was said.
+- Improved the copilot's handling of failed actions, so it learns why an action failed and can correct its next attempt.
+- Fixed the copilot sometimes saying it could not start workflow runs.
+- Changed workflow publishing to refuse workflows that contain a Halt step; use the run summary instead. Workflows already published with a Halt step keep running.
+- Fixed filters on transcript, quality and insights data that are meant to ignore letter case matching only the exact case.
+- Web app: Added chart variants and editor controls to dashboards, including a second value axis, line styles and markers, stack groups, horizontal bars, goal lines and shaded bands, donut, half and two-level pies, scatter trend lines and grouped treemaps.
+- Web app: Added expandable card descriptions on dashboards, and an option to show a card's description as a tooltip.
+- Web app: Added links that open a call's transcript at a specific moment, which the copilot uses in its transcript search results.
+- Web app: Added a notice in copilot replies when an action fails for a reason it cannot fix itself, with a reference to give support.
+- Web app: Fixed dashboard chart options that had no effect: legend position, series breakout, distinct colours beyond the fifth series, and PNG download.
+- Web app: Fixed sankey charts not labelling their nodes and rendering blank when a value appeared on both sides.
+- Web app: Fixed the dashboard Edit card dialog's controls sliding off-screen for cards with a long description or a wide table.
+
+## 2026-11-12
+- Added workflow help to the copilot: it can look up workflows and runs and prepare changes to them, which are made only after you confirm them.
+- Changed copilot conversations so that only the user who had them and administrators can read them.
+- Added backfills of a past date range to workflows built from blocks, optionally for only some of their blocks; a running backfill no longer causes the scheduled run to be skipped.
+- Added a run summary to workflows, recorded when a run reaches its end.
+- Added an option to keep HubSpot contacts up to date when they are edited after they were created.
+- Improved workflow validation so problems with a stored decision policy are shown on the step and field they belong to.
+- Improved workflow validation speed for very large workflow definitions.
+- Strengthened auditing of account changes made through API clients.
+- Web app: Added a Decision policies section for creating, versioning and activating stored decision policies, and the option to use a stored policy in a workflow step.
+- Web app: Added a Blocks view for workflows built from blocks, where they can be viewed and edited block by block.
+- Web app: Added a run view grouped by block, and options in the Run dialog to run only some blocks or backfill a past date range.
+- Web app: Added a confirmation card for workflow changes the copilot prepares, and the copilot can now point to steps on workflow and run diagrams.
+- Web app: Added a Finish step to the workflow designer for editing a workflow's run summary; the Halt step is no longer offered.
+- Web app: Added searchable pickers in the workflow designer for inputs that refer to forms, signals, connections or other workflows.
+- Web app: Added an editor for signal path maps in the workflow designer.
+- Web app: Added the Completed with failures run status and skipped steps to workflow run views.
+- Web app: Improved the workflow designer to hide inputs that are filled in automatically unless a step sets them.
+- Web app: Fixed the cursor being lost when a workflow designer field switched editors while typing.
+- Web app: Strengthened protection of web app pages.
+
+## 2026-11-10
+- Fixed customer lifecycle tracking keeping entries for contacts that had since been excluded, which could inflate funnel counts.
+- Strengthened auditing of changes to user roles, permissions and account membership.
+- Strengthened protection of platform credentials.
+
+## 2026-11-07
+- Maintenance and reliability improvements.
+
+## 2026-11-06
+- Fixed very large numeric identifiers losing precision when passed between workflow steps.
+- Strengthened data isolation between accounts in workflow runs.
+
+## 2026-11-05
+- Fixed calls whose recording or transcript arrived after the call itself not showing that transcript or audio.
+- Fixed HubSpot calls sometimes reaching transcripts, signals and reports a day late.
+- Improved nightly data processing so it fully catches up in one run after a delayed or missed night.
+- Fixed dashboard queries that cannot run showing a generic error; they now explain why the query was refused.
+- Fixed some automated quality evaluations failing to complete.
+- Improved workflow run reports so steps that had nothing new to process are no longer flagged as warnings.
+- Strengthened auditing of changes to workflows, including who made each change.
+- Strengthened access controls for workflows.
+
+## 2026-11-04
+- Maintenance and reliability improvements.
+
+## 2026-10-31
+- Fixed workflow runs failing when an interrupted step could not be restarted straight away; the step is now retried with its remaining attempts first.
+
 ## 2026-10-30
 - Strengthened auditing of account sign-in and sign-out.
 - Strengthened protection of customer data processed by AI services.
